@@ -203,11 +203,11 @@ Defaults work. Change them with environment variables or `~/.config/youtube-unde
 
 ```bash
 cd youtube-understanding
-uv run pytest -q
+uv run --locked pytest
 uvx --from skills-ref==0.1.1 agentskills validate "$PWD"
 ```
 
-Tests use no network and no paid calls.
+Tests use no network and no paid calls. CI runs both commands on Ubuntu and macOS, with Python 3.11 and 3.13, for every push to `main` and every pull request (`.github/workflows/ci.yml`).
 
 ## License
 
