@@ -1,0 +1,15 @@
+{
+  "name": "youtube-skill",
+  "description": "YouTube video understanding skill for Claude Code",
+  "owner": {
+    "name": "Sanjit Roopra"
+  },
+  "plugins": [
+    {
+      "name": "youtube-understanding",
+      "source": "./youtube-understanding",
+      "description": "Understand YouTube videos: timestamped transcripts, frames and cited notes",
+      "license": "MIT"
+    }
+  ]
+}

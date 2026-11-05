@@ -2,7 +2,7 @@
 
 Give your coding agent a YouTube link. It reads the video and answers with timestamps.
 
-Works in every agent that reads the [Agent Skills standard](https://agentskills.io): Claude Code, Codex, Gemini CLI, GitHub Copilot, Cursor, OpenCode. MIT.
+Works in every agent that reads the [Agent Skills standard](https://agentskills.io): Claude Code, Codex, Gemini CLI, GitHub Copilot, pi, Cursor, OpenCode. MIT.
 
 ## What it does
 
@@ -35,29 +35,56 @@ The agent replies (shortened from [`examples/rfscVS0vtbw/knowledge.md`](examples
 
 ## Install
 
-You need 3 things. Setup takes about 5 minutes.
+One command installs the skill for every agent:
+
+```bash
+npx skills add sroopra/youtube-skill -g -a claude-code codex -y
+```
+
+This works in Claude Code, Codex, Gemini CLI, GitHub Copilot (CLI and VS Code), pi, Cursor and OpenCode. It needs Node 22.20 or newer. Restart your agent afterwards.
+
+The skill also needs two programs that no installer adds for you:
 
 | Need | Why | Get it |
 |---|---|---|
-| macOS or Linux | Windows is not tested | |
 | [uv](https://docs.astral.sh/uv/) | Installs Python and all libraries on the first run | `curl -LsSf https://astral.sh/uv/install.sh \| sh` |
 | ffmpeg | Takes screenshots | `brew install ffmpeg` or `apt install ffmpeg` |
 
-Then:
+macOS and Linux only. Windows is not tested.
 
-1. Clone this repo.
-2. Link the skill folder into your agent (see the table below).
-3. Restart the agent.
-4. Run the check: `uv run youtube-understanding/scripts/yt.py doctor --network`
+Check that everything works:
+
+```bash
+uv run ~/.agents/skills/youtube-understanding/scripts/yt.py doctor --network
+```
 
 The first run downloads the libraries. It takes about 30 seconds.
 
-| Agent | Command (run in the repo folder) |
-|---|---|
-| Claude Code | `ln -s "$PWD/youtube-understanding" ~/.claude/skills/youtube-understanding` |
-| Codex, Gemini CLI, Copilot, Cursor, OpenCode | `ln -s "$PWD/youtube-understanding" ~/.agents/skills/youtube-understanding` |
+Update: `npx skills update youtube-understanding -g -y`. Remove: `npx skills remove youtube-understanding -g -y`.
 
-Create the target folder first if it does not exist: `mkdir -p ~/.claude/skills` or `mkdir -p ~/.agents/skills`.
+### Other ways to install
+
+Use one of these instead of `npx`, not as well. Two installs make the agent load the skill twice.
+
+| Agent | Command |
+|---|---|
+| Claude Code (plugin) | `claude plugin marketplace add sroopra/youtube-skill`, then `claude plugin install youtube-understanding@youtube-skill` |
+| pi (package) | `pi install git:github.com/sroopra/youtube-skill` |
+| Gemini CLI | `gemini skills install https://github.com/sroopra/youtube-skill --path youtube-understanding --consent` |
+| Any agent, without Node | `gh skill install sroopra/youtube-skill youtube-understanding --agent claude-code --scope user` (gh 2.90 or newer) |
+
+Update the Claude Code plugin with `claude plugin marketplace update youtube-skill`, then `claude plugin update youtube-understanding@youtube-skill`. Update the pi package with `pi update`.
+
+### Working on the skill itself
+
+Clone the repo and link the folder, so your edits are live:
+
+```bash
+ln -s "$PWD/youtube-understanding" ~/.claude/skills/youtube-understanding   # Claude Code
+ln -s "$PWD/youtube-understanding" ~/.agents/skills/youtube-understanding   # all other agents
+```
+
+### Codex network access
 
 Codex blocks network access by default. Add this to `~/.codex/config.toml`:
 
@@ -113,7 +140,7 @@ The agent calls `scripts/yt.py`. You can call it yourself too:
 | `yt.py frames URL --at 12:34` | A screenshot as a JPEG file | 5 to 20 s |
 | `yt.py package URL --with-frames --out ./notes` | Full notes folder | 1 to 3 min |
 
-Write each command as `uv run youtube-understanding/scripts/yt.py ...`. Output is JSON.
+Write each command as `uv run ~/.agents/skills/youtube-understanding/scripts/yt.py ...` (or `youtube-understanding/scripts/yt.py` in a clone). Output is JSON.
 
 Add `--window 10:00-25:00` to work on one part of a long video. It is faster and cheaper.
 
