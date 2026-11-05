@@ -227,3 +227,27 @@ def test_inference_is_never_labelled_demonstrated():
     assert "inferred" in tag
     shown = dataclasses.replace(it, kind="code")
     assert "demonstrated" in package._tag(shown)
+
+
+def test_note_frame_resolves_screenshot_grabbed_in_same_run(cfg, tmp_path):
+    """One `package --with-frames --merge-notes` call: notes name screenshots/<t>.jpg, but this
+    run's frames are still in the cache until write_package copies them."""
+    import hashlib
+    from ytu.models import Evidence, Frame
+    out = tmp_path / "pkg"                       # empty package dir, no screenshots/ yet
+    cached = Path(cfg.cache_dir) / "frames" / "ab" / "x.jpg"
+    cached.parent.mkdir(parents=True)
+    jpg = b"\xff\xd8\xff\xe0grabbed-this-run"
+    cached.write_bytes(jpg)
+    shot = Frame(id="F0001", path=str(cached), abs_ts=42.0, selection_reason="gemini-event",
+                 sha256=hashlib.sha256(jpg).hexdigest(), width=1, height=1)
+    evidence = Evidence(video_id="abc", items=[], frames=[shot])
+    notes = {"items": [{"claim": "slide shows the title", "kind": "slide", "t_start": 42,
+                        "frames": ["screenshots/t0042000.jpg"], "section": "visual"},
+                       {"claim": "no such frame", "kind": "slide", "t_start": 42,
+                        "frames": ["screenshots/t0099000.jpg"], "section": "visual"}]}
+    rep = package.merge_notes(cfg, meta(), None, {}, evidence, notes, out)
+    assert rep["accepted"] == 1
+    assert [r["index"] for r in rep["rejected"]] == [1]
+    assert len(evidence.frames) == 1                      # reused, not duplicated
+    assert evidence.items[0].frame_ids == ["F0001"]

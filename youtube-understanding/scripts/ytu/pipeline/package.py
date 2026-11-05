@@ -473,12 +473,22 @@ def load_notes(path: Path) -> dict:
     return data
 
 
-def _note_frame(cfg: Config, out_dir: Path, raw, t_default: float) -> Frame:
+def _note_frame(cfg: Config, out_dir: Path, raw, t_default: float,
+                staged: dict[str, str] | None = None) -> Frame:
+    """Resolve and check one frame path from a host note.
+
+    ``staged`` maps screenshot file names (``t<ms>.jpg``) to the cache paths of frames grabbed
+    earlier in this same run. Those frames are copied into ``screenshots/`` only when the package
+    is written, which happens after the notes are merged. Without this lookup, a single
+    ``package --with-frames --merge-notes`` call would reject every note that names
+    ``screenshots/t<ms>.jpg`` for a frame that this run grabs."""
     if not isinstance(raw, str) or not raw:
         raise ValueError("frame must be a path string")
     p = Path(raw).expanduser()
     if not p.is_absolute():
         p = out_dir / p
+        if staged and not p.exists() and p.parent.name == "screenshots" and p.name in staged:
+            p = Path(staged[p.name])
     p = p.resolve()
     roots = [Path(cfg.cache_dir).resolve(), out_dir.resolve()]
     if not any(p == r or r in p.parents for r in roots):
@@ -525,6 +535,7 @@ def merge_notes(cfg: Config, meta: VideoMeta, tr: Transcript | None, analysis: d
     accepted, rejected = 0, []
     dur = float(meta.duration or 0)
     known_frames = {f.path: f for f in evidence.frames}
+    staged = {frame_filename(f.abs_ts): f.path for f in evidence.frames if Path(f.path).is_absolute()}
     cap_src = None
     if tr is not None:
         cap_src = tr.source.replace("asr-", "asr:", 1) if tr.source.startswith("asr") else (
@@ -576,7 +587,7 @@ def merge_notes(cfg: Config, meta: VideoMeta, tr: Transcript | None, analysis: d
         frames: list[Frame] = []
         try:
             for raw in n.get("frames") or []:
-                f = _note_frame(cfg, out_dir, raw, t)
+                f = _note_frame(cfg, out_dir, raw, t, staged)
                 # same image already in the package (e.g. screenshots/<t>.jpg) -> reuse that Frame
                 same = known_frames.get(f.path) or next(
                     (k for k in known_frames.values() if f.sha256 and k.sha256 == f.sha256), None)
