@@ -1,5 +1,8 @@
 # youtube-understanding
 
+[![CI](https://github.com/sroopra/youtube-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/sroopra/youtube-skill/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Give your coding agent a YouTube link. It reads the video and answers with timestamps.
 
 Works in every agent that reads the [Agent Skills standard](https://agentskills.io): Claude Code, Codex, Gemini CLI, GitHub Copilot, pi, Cursor, OpenCode. MIT.

@@ -3,7 +3,7 @@
   "private": true,
   "description": "Agent skill that understands YouTube videos with timestamped evidence",
   "license": "MIT",
-  "keywords": ["pi-package", "agent-skill"],
+  "keywords": ["pi-package", "agent-skill", "youtube", "video-understanding", "transcript"],
   "repository": "github:sroopra/youtube-skill",
   "pi": {
     "skills": ["./youtube-understanding"]
