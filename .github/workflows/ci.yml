@@ -31,8 +31,8 @@ jobs:
           version: "0.9.17"
       # Tests use fakes: no network, no paid calls. addopts in pyproject.toml adds -q.
       - run: uv run --locked --python ${{ matrix.python }} pytest
-      # Users run yt.py through its PEP 723 block, not pyproject.toml. Resolve it for real
-      # so a drift between the two manifests fails here.
+      # Users run yt.py through its PEP 723 block, not pyproject.toml. This step proves the
+      # block resolves and installs; tests/test_manifests.py checks it matches pyproject.toml.
       - if: ${{ !cancelled() }}
         run: uv run --python ${{ matrix.python }} --script scripts/yt.py --help
       - if: ${{ !cancelled() }}
