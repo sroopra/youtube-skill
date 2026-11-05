@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: test (${{ matrix.os }}, py${{ matrix.python }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        # Oldest supported (requires-python >=3.11) and newest tested.
+        python: ["3.11", "3.13"]
+    defaults:
+      run:
+        working-directory: youtube-understanding
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: "0.9.17"
+      # Tests use fakes: no network, no paid calls. addopts in pyproject.toml adds -q.
+      - run: uv run --locked --python ${{ matrix.python }} pytest
+      # Users run yt.py through its PEP 723 block, not pyproject.toml. This step proves the
+      # block resolves and installs; tests/test_manifests.py checks it matches pyproject.toml.
+      - if: ${{ !cancelled() }}
+        run: uv run --python ${{ matrix.python }} --script scripts/yt.py --help
+      - if: ${{ !cancelled() }}
+        run: uvx --from skills-ref==0.1.1 agentskills validate "$PWD"

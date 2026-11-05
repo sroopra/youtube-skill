@@ -1,5 +1,8 @@
 # youtube-understanding
 
+[![CI](https://github.com/sroopra/youtube-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/sroopra/youtube-skill/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Give your coding agent a YouTube link. It reads the video and answers with timestamps.
 
 Works in every agent that reads the [Agent Skills standard](https://agentskills.io): Claude Code, Codex, Gemini CLI, GitHub Copilot, pi, Cursor, OpenCode. MIT.
@@ -200,11 +203,11 @@ Defaults work. Change them with environment variables or `~/.config/youtube-unde
 
 ```bash
 cd youtube-understanding
-uv run pytest -q
+uv run --locked pytest
 uvx --from skills-ref==0.1.1 agentskills validate "$PWD"
 ```
 
-Tests use no network and no paid calls.
+Tests use no network and no paid calls. CI runs both commands, plus `uv run --script scripts/yt.py --help` to check the dependency block in `yt.py`, on Ubuntu and macOS, with Python 3.11 and 3.13, for every push to `main` and every pull request (`.github/workflows/ci.yml`).
 
 ## License
 
