@@ -1,0 +1,6 @@
+interface:
+  display_name: "YouTube Understanding"
+  short_description: "Summarize, learn from and question YouTube videos with timestamped evidence"
+  default_prompt: "Summarize this YouTube video with timestamped key points: "
+policy:
+  allow_implicit_invocation: true

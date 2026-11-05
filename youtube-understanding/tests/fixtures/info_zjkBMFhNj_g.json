@@ -1,0 +1,210 @@
+{
+ "id": "zjkBMFhNj_g",
+ "title": "[1hr Talk] Intro to Large Language Models",
+ "duration": 3588,
+ "channel": "Andrej Karpathy",
+ "channel_id": "UCXUPKJO5MZQN11PqgIvyuvQ",
+ "upload_date": "20231123",
+ "description": "This is a 1 hour general-audience introduction to Large Language Models: the core technical component behind systems like ChatGPT, Claude, and Bard. What they are, where they are headed, comparisons a",
+ "language": "en",
+ "availability": "public",
+ "live_status": "not_live",
+ "is_live": false,
+ "was_live": false,
+ "age_limit": 0,
+ "view_count": 4321487,
+ "webpage_url": "https://www.youtube.com/watch?v=zjkBMFhNj_g",
+ "chapters": [
+  {
+   "start_time": 0,
+   "title": "Intro: Large Language Model (LLM) talk",
+   "end_time": 20
+  },
+  {
+   "start_time": 20,
+   "title": "LLM Inference",
+   "end_time": 257
+  },
+  {
+   "start_time": 257,
+   "title": "LLM Training",
+   "end_time": 538
+  },
+  {
+   "start_time": 538,
+   "title": "LLM dreams",
+   "end_time": 682
+  }
+ ],
+ "heatmap": [
+  {
+   "start_time": 0.0,
+   "end_time": 35.88,
+   "value": 0.617004215063991
+  },
+  {
+   "start_time": 35.88,
+   "end_time": 71.76,
+   "value": 0.6183951908455778
+  },
+  {
+   "start_time": 71.76,
+   "end_time": 107.64,
+   "value": 0.5582142126544797
+  }
+ ],
+ "subtitles": {},
+ "automatic_captions": {
+  "en-orig": [
+   {
+    "ext": "json3",
+    "name": "English (Original)"
+   },
+   {
+    "ext": "srv1",
+    "name": "English (Original)"
+   },
+   {
+    "ext": "srv2",
+    "name": "English (Original)"
+   },
+   {
+    "ext": "srv3",
+    "name": "English (Original)"
+   },
+   {
+    "ext": "ttml",
+    "name": "English (Original)"
+   },
+   {
+    "ext": "srt",
+    "name": "English (Original)"
+   },
+   {
+    "ext": "vtt",
+    "name": "English (Original)"
+   }
+  ],
+  "en": [
+   {
+    "ext": "json3",
+    "name": "English"
+   },
+   {
+    "ext": "srv1",
+    "name": "English"
+   },
+   {
+    "ext": "srv2",
+    "name": "English"
+   },
+   {
+    "ext": "srv3",
+    "name": "English"
+   },
+   {
+    "ext": "ttml",
+    "name": "English"
+   },
+   {
+    "ext": "srt",
+    "name": "English"
+   },
+   {
+    "ext": "vtt",
+    "name": "English"
+   }
+  ],
+  "fr": [
+   {
+    "ext": "json3",
+    "name": "French"
+   },
+   {
+    "ext": "srv1",
+    "name": "French"
+   },
+   {
+    "ext": "srv2",
+    "name": "French"
+   },
+   {
+    "ext": "srv3",
+    "name": "French"
+   },
+   {
+    "ext": "ttml",
+    "name": "French"
+   },
+   {
+    "ext": "srt",
+    "name": "French"
+   },
+   {
+    "ext": "vtt",
+    "name": "French"
+   }
+  ],
+  "de": [
+   {
+    "ext": "json3",
+    "name": "German"
+   },
+   {
+    "ext": "srv1",
+    "name": "German"
+   },
+   {
+    "ext": "srv2",
+    "name": "German"
+   },
+   {
+    "ext": "srv3",
+    "name": "German"
+   },
+   {
+    "ext": "ttml",
+    "name": "German"
+   },
+   {
+    "ext": "srt",
+    "name": "German"
+   },
+   {
+    "ext": "vtt",
+    "name": "German"
+   }
+  ],
+  "ja": [
+   {
+    "ext": "json3",
+    "name": "Japanese"
+   },
+   {
+    "ext": "srv1",
+    "name": "Japanese"
+   },
+   {
+    "ext": "srv2",
+    "name": "Japanese"
+   },
+   {
+    "ext": "srv3",
+    "name": "Japanese"
+   },
+   {
+    "ext": "ttml",
+    "name": "Japanese"
+   },
+   {
+    "ext": "srt",
+    "name": "Japanese"
+   },
+   {
+    "ext": "vtt",
+    "name": "Japanese"
+   }
+  ]
+ },
+ "_trimmed": "trimmed live yt-dlp 2026.10.26 -J output (2026-11-05); URLs removed"
+}

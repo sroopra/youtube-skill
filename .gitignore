@@ -1,0 +1,28 @@
+# secrets: never commit API keys
+.env
+.env.*
+*.env
+
+# Python / uv
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# tool caches and generated packages
+.cache/
+youtube-understanding-cache/
+youtube-knowledge/
+
+# OS
+.DS_Store
+
+# local Claude Code tool logs
+.claude/
+
+# third-party video content (copyright): never commit raw transcripts or screenshots
+examples/**/transcript.srt
+examples/**/transcript.json
+examples/**/screenshots/

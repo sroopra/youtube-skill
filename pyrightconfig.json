@@ -1,0 +1,7 @@
+{
+  "venvPath": "youtube-understanding",
+  "venv": ".venv",
+  "extraPaths": ["youtube-understanding/scripts", "youtube-understanding/tests"],
+  "pythonVersion": "3.11",
+  "include": ["youtube-understanding/scripts", "youtube-understanding/tests"]
+}

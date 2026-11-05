@@ -1,0 +1,893 @@
+{
+  "video_id": "rfscVS0vtbw",
+  "source_hash": "e32b9c2d9eaf4e4545a419fbdcb65b45ae9a695f9e4b2e7870023f923fe23119",
+  "items": [
+    {
+      "id": "E0001",
+      "claim": "Chapter title card reads 'Building a Basic Calculator' (white text on blue).",
+      "kind": "slide",
+      "t_start": 3159.0,
+      "t_end": 3159.0,
+      "timestamp": "52:39",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3159s",
+      "transcript_segment_ids": [
+        "s0559"
+      ],
+      "frame_ids": [
+        "F0001"
+      ],
+      "sources": [
+        "host-agent",
+        "host-vision"
+      ],
+      "status": "single-source",
+      "confidence": "medium",
+      "notes": "host-agent note",
+      "injection_suspect": false,
+      "demonstrated": true
+    },
+    {
+      "id": "E0002",
+      "claim": "Title card showing the chapter title.\nBuilding a Basic Calculator",
+      "kind": "slide",
+      "t_start": 3159.84,
+      "t_end": 3159.84,
+      "timestamp": "52:39",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3159s",
+      "transcript_segment_ids": [
+        "s0559"
+      ],
+      "frame_ids": [
+        "F0001"
+      ],
+      "sources": [
+        "gemini:static:gemini-3.8-flash"
+      ],
+      "status": "single-source",
+      "confidence": "medium",
+      "notes": "frame auto-attached by time, pixels not checked",
+      "injection_suspect": false,
+      "demonstrated": null
+    },
+    {
+      "id": "E0003",
+      "claim": "PyCharm editor interface appears with the presenter visible in the bottom right corner.\nPyCharm Community Edition",
+      "kind": "ui",
+      "t_start": 3160.0,
+      "t_end": 3160.0,
+      "timestamp": "52:40",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3160s",
+      "transcript_segment_ids": [
+        "s0559"
+      ],
+      "frame_ids": [
+        "F0001"
+      ],
+      "sources": [
+        "gemini:static:gemini-3.8-flash"
+      ],
+      "status": "single-source",
+      "confidence": "medium",
+      "notes": "frame auto-attached by time, pixels not checked",
+      "injection_suspect": false,
+      "demonstrated": null
+    },
+    {
+      "id": "E0004",
+      "claim": "PyCharm Community Edition",
+      "kind": "inference",
+      "t_start": 3160.0,
+      "t_end": 3160.0,
+      "timestamp": "52:40",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3160s",
+      "transcript_segment_ids": [
+        "s0559"
+      ],
+      "frame_ids": [],
+      "sources": [
+        "gemini:static:gemini-3.8-flash"
+      ],
+      "status": "single-source",
+      "confidence": "medium",
+      "notes": "",
+      "injection_suspect": false,
+      "demonstrated": true
+    },
+    {
+      "id": "E0005",
+      "claim": "Editor is PyCharm Community Edition with project 'Giraffe' and an empty file 'app'.",
+      "kind": "ui",
+      "t_start": 3176.0,
+      "t_end": 3176.0,
+      "timestamp": "52:56",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3176s",
+      "transcript_segment_ids": [
+        "s0562"
+      ],
+      "frame_ids": [
+        "F0002"
+      ],
+      "sources": [
+        "host-agent",
+        "host-vision"
+      ],
+      "status": "single-source",
+      "confidence": "medium",
+      "notes": "host-agent note",
+      "injection_suspect": false,
+      "demonstrated": true
+    },
+    {
+      "id": "E0006",
+      "claim": "Store user input for the first number into a variable `num1` using `input(\"Enter a number: \")`.",
+      "kind": "speech",
+      "t_start": 3191.6,
+      "t_end": 3191.6,
+      "timestamp": "53:11",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3191s",
+      "transcript_segment_ids": [
+        "s0565",
+        "s0566",
+        "s0567"
+      ],
+      "frame_ids": [],
+      "sources": [
+        "gemini:static:gemini-3.8-flash",
+        "captions:manual"
+      ],
+      "status": "corroborated",
+      "confidence": "high",
+      "notes": "matched transcript at 53:11 (model said 53:25)",
+      "injection_suspect": false,
+      "demonstrated": true
+    },
+    {
+      "id": "E0007",
+      "claim": "Store user input for the second number into a variable `num2` using `input(\"Enter another number: \")`.",
+      "kind": "speech",
+      "t_start": 3208.8,
+      "t_end": 3208.8,
+      "timestamp": "53:28",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3208s",
+      "transcript_segment_ids": [
+        "s0568",
+        "s0569",
+        "s0570"
+      ],
+      "frame_ids": [],
+      "sources": [
+        "gemini:static:gemini-3.8-flash",
+        "captions:manual"
+      ],
+      "status": "corroborated",
+      "confidence": "high",
+      "notes": "matched transcript at 53:28 (model said 53:44)",
+      "injection_suspect": false,
+      "demonstrated": true
+    },
+    {
+      "id": "E0008",
+      "claim": "Perform addition on the inputs and assign to `result`.",
+      "kind": "speech",
+      "t_start": 3232.64,
+      "t_end": 3232.64,
+      "timestamp": "53:52",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3232s",
+      "transcript_segment_ids": [
+        "s0571",
+        "s0572",
+        "s0573"
+      ],
+      "frame_ids": [],
+      "sources": [
+        "gemini:static:gemini-3.8-flash",
+        "captions:manual"
+      ],
+      "status": "corroborated",
+      "confidence": "high",
+      "notes": "matched transcript at 53:52 (model said 54:01)",
+      "injection_suspect": false,
+      "demonstrated": true
+    },
+    {
+      "id": "E0009",
+      "claim": "Print the `result` using `print(result)`.",
+      "kind": "speech",
+      "t_start": 3238.8,
+      "t_end": 3238.8,
+      "timestamp": "53:58",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3238s",
+      "transcript_segment_ids": [
+        "s0572",
+        "s0573",
+        "s0574"
+      ],
+      "frame_ids": [],
+      "sources": [
+        "gemini:static:gemini-3.8-flash",
+        "captions:manual"
+      ],
+      "status": "corroborated",
+      "confidence": "high",
+      "notes": "matched transcript at 53:58 (model said 54:09)",
+      "injection_suspect": false,
+      "demonstrated": true
+    },
+    {
+      "id": "E0010",
+      "claim": "num1 = input(\"Enter a number: \")\nnum2 = input(\"Enter another number: \")\nresult = num1 + num2\n\nprint(result)",
+      "kind": "code",
+      "t_start": 3254.0,
+      "t_end": 3254.0,
+      "timestamp": "54:14",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3254s",
+      "transcript_segment_ids": [
+        "s0574",
+        "s0571",
+        "s0572",
+        "s0573"
+      ],
+      "frame_ids": [
+        "F0003"
+      ],
+      "sources": [
+        "gemini:static:gemini-3.8-flash",
+        "host-agent",
+        "host-vision",
+        "captions:manual"
+      ],
+      "status": "verified",
+      "confidence": "low",
+      "notes": "code without a frame: not verified against pixels; frame auto-attached by time, pixels not checked; confirmed by host-agent note",
+      "injection_suspect": false,
+      "demonstrated": true
+    },
+    {
+      "id": "E0011",
+      "claim": "Python 3.6",
+      "kind": "inference",
+      "t_start": 3266.0,
+      "t_end": 3266.0,
+      "timestamp": "54:26",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3266s",
+      "transcript_segment_ids": [
+        "s0576"
+      ],
+      "frame_ids": [],
+      "sources": [
+        "gemini:static:gemini-3.8-flash"
+      ],
+      "status": "single-source",
+      "confidence": "medium",
+      "notes": "",
+      "injection_suspect": false,
+      "demonstrated": true
+    },
+    {
+      "id": "E0012",
+      "claim": "Run the initial code to observe default string concatenation when inputs are not converted.",
+      "kind": "inference",
+      "t_start": 3266.0,
+      "t_end": 3266.0,
+      "timestamp": "54:26",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3266s",
+      "transcript_segment_ids": [
+        "s0576"
+      ],
+      "frame_ids": [],
+      "sources": [
+        "gemini:static:gemini-3.8-flash"
+      ],
+      "status": "single-source",
+      "confidence": "medium",
+      "notes": "injection-suspect patterns: tool-command",
+      "injection_suspect": true,
+      "demonstrated": true
+    },
+    {
+      "id": "E0013",
+      "claim": "Using the '+' operator on two string inputs results in string concatenation rather than numerical addition.",
+      "kind": "speech",
+      "t_start": 3269.12,
+      "t_end": 3269.12,
+      "timestamp": "54:29",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3269s",
+      "transcript_segment_ids": [
+        "s0577",
+        "s0578",
+        "s0579"
+      ],
+      "frame_ids": [],
+      "sources": [
+        "gemini:static:gemini-3.8-flash",
+        "captions:manual"
+      ],
+      "status": "corroborated",
+      "confidence": "high",
+      "notes": "matched transcript at 54:29 (model said 54:44)",
+      "injection_suspect": false,
+      "demonstrated": null
+    },
+    {
+      "id": "E0014",
+      "claim": "Running the initial program in the terminal console showing string concatenation output '58.3' from inputs 5 and 8.3.\nEnter a number: 5\nEnter another number: 8.3\n58.3",
+      "kind": "ui",
+      "t_start": 3280.0,
+      "t_end": 3280.0,
+      "timestamp": "54:40",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3280s",
+      "transcript_segment_ids": [
+        "s0578"
+      ],
+      "frame_ids": [
+        "F0004"
+      ],
+      "sources": [
+        "gemini:static:gemini-3.8-flash"
+      ],
+      "status": "single-source",
+      "confidence": "medium",
+      "notes": "frame auto-attached by time, pixels not checked",
+      "injection_suspect": false,
+      "demonstrated": null
+    },
+    {
+      "id": "E0015",
+      "claim": "First run: inputs 5 and 8.3 print 58.3 (string concatenation, not addition).",
+      "kind": "ui",
+      "t_start": 3280.0,
+      "t_end": 3280.0,
+      "timestamp": "54:40",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3280s",
+      "transcript_segment_ids": [
+        "s0577",
+        "s0578",
+        "s0579"
+      ],
+      "frame_ids": [
+        "F0004"
+      ],
+      "sources": [
+        "host-agent",
+        "host-vision",
+        "captions:manual"
+      ],
+      "status": "verified",
+      "confidence": "medium",
+      "notes": "host-agent note",
+      "injection_suspect": false,
+      "demonstrated": true
+    },
+    {
+      "id": "E0016",
+      "claim": "Python 3 is implied by print() and input() usage, but the exact version is not visible: the interpreter path is cut off at 'Python.framework/Versi'.",
+      "kind": "inference",
+      "t_start": 3280.0,
+      "t_end": 3280.0,
+      "timestamp": "54:40",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3280s",
+      "transcript_segment_ids": [
+        "s0578"
+      ],
+      "frame_ids": [
+        "F0004",
+        "F0009"
+      ],
+      "sources": [
+        "host-agent",
+        "host-vision"
+      ],
+      "status": "single-source",
+      "confidence": "medium",
+      "notes": "host-agent note",
+      "injection_suspect": false,
+      "demonstrated": false
+    },
+    {
+      "id": "E0017",
+      "claim": "input() always returns a string, so values must be converted before arithmetic.",
+      "kind": "speech",
+      "t_start": 3293.0,
+      "t_end": 3293.0,
+      "timestamp": "54:53",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3293s",
+      "transcript_segment_ids": [
+        "s0580"
+      ],
+      "frame_ids": [],
+      "sources": [
+        "host-agent",
+        "captions:manual"
+      ],
+      "status": "verified",
+      "confidence": "medium",
+      "notes": "host-agent note",
+      "injection_suspect": false,
+      "demonstrated": true
+    },
+    {
+      "id": "E0018",
+      "claim": "By default, the Python input() function converts all user input into strings.",
+      "kind": "speech",
+      "t_start": 3293.04,
+      "t_end": 3293.04,
+      "timestamp": "54:53",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3293s",
+      "transcript_segment_ids": [
+        "s0580"
+      ],
+      "frame_ids": [],
+      "sources": [
+        "gemini:static:gemini-3.8-flash",
+        "captions:manual"
+      ],
+      "status": "corroborated",
+      "confidence": "high",
+      "notes": "",
+      "injection_suspect": false,
+      "demonstrated": null
+    },
+    {
+      "id": "E0019",
+      "claim": "User Input Conversion",
+      "kind": "speech",
+      "t_start": 3293.04,
+      "t_end": 3293.04,
+      "timestamp": "54:53",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3293s",
+      "transcript_segment_ids": [
+        "s0580"
+      ],
+      "frame_ids": [],
+      "sources": [
+        "gemini:static:gemini-3.8-flash",
+        "captions:manual"
+      ],
+      "status": "corroborated",
+      "confidence": "high",
+      "notes": "",
+      "injection_suspect": false,
+      "demonstrated": true
+    },
+    {
+      "id": "E0020",
+      "claim": "The int() function converts a value into an integer (whole number), but throwing a decimal string into int() causes a ValueError.",
+      "kind": "inference",
+      "t_start": 3343.0,
+      "t_end": 3343.0,
+      "timestamp": "55:43",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3343s",
+      "transcript_segment_ids": [
+        "s0587"
+      ],
+      "frame_ids": [],
+      "sources": [
+        "gemini:static:gemini-3.8-flash"
+      ],
+      "status": "single-source",
+      "confidence": "medium",
+      "notes": "",
+      "injection_suspect": false,
+      "demonstrated": null
+    },
+    {
+      "id": "E0021",
+      "claim": "Integer Type Casting (int)",
+      "kind": "speech",
+      "t_start": 3343.36,
+      "t_end": 3343.36,
+      "timestamp": "55:43",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3343s",
+      "transcript_segment_ids": [
+        "s0588",
+        "s0589",
+        "s0590"
+      ],
+      "frame_ids": [],
+      "sources": [
+        "gemini:static:gemini-3.8-flash",
+        "captions:manual"
+      ],
+      "status": "corroborated",
+      "confidence": "high",
+      "notes": "",
+      "injection_suspect": false,
+      "demonstrated": true
+    },
+    {
+      "id": "E0022",
+      "claim": "int() converts a value to a whole number (no decimal point).",
+      "kind": "speech",
+      "t_start": 3354.0,
+      "t_end": 3354.0,
+      "timestamp": "55:54",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3354s",
+      "transcript_segment_ids": [
+        "s0588",
+        "s0589",
+        "s0590"
+      ],
+      "frame_ids": [],
+      "sources": [
+        "host-agent",
+        "captions:manual"
+      ],
+      "status": "verified",
+      "confidence": "medium",
+      "notes": "host-agent note",
+      "injection_suspect": false,
+      "demonstrated": true
+    },
+    {
+      "id": "E0023",
+      "claim": "Convert both inputs into integers inside the sum: `result = int(num1) + int(num2)` and test it.",
+      "kind": "speech",
+      "t_start": 3367.04,
+      "t_end": 3367.04,
+      "timestamp": "56:07",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3367s",
+      "transcript_segment_ids": [
+        "s0592",
+        "s0593"
+      ],
+      "frame_ids": [],
+      "sources": [
+        "gemini:static:gemini-3.8-flash",
+        "captions:manual"
+      ],
+      "status": "corroborated",
+      "confidence": "high",
+      "notes": "matched transcript at 56:07 (model said 55:43)",
+      "injection_suspect": false,
+      "demonstrated": true
+    },
+    {
+      "id": "E0024",
+      "claim": "num1 = input(\"Enter a number: \")\nnum2 = input(\"Enter another number: \")\nresult = int(num1) + int(num2)\n\nprint(result)",
+      "kind": "code",
+      "t_start": 3375.0,
+      "t_end": 3375.0,
+      "timestamp": "56:15",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3375s",
+      "transcript_segment_ids": [
+        "s0592"
+      ],
+      "frame_ids": [
+        "F0005"
+      ],
+      "sources": [
+        "gemini:static:gemini-3.8-flash",
+        "host-agent",
+        "host-vision",
+        "captions:manual"
+      ],
+      "status": "verified",
+      "confidence": "low",
+      "notes": "code without a frame: not verified against pixels; frame auto-attached by time, pixels not checked; confirmed by host-agent note",
+      "injection_suspect": false,
+      "demonstrated": true
+    },
+    {
+      "id": "E0025",
+      "claim": "Terminal showing ValueError crash when passing decimal strings '4.3' to int().\nValueError: invalid literal for int() with base 10: '4.3'",
+      "kind": "ui",
+      "t_start": 3417.0,
+      "t_end": 3417.0,
+      "timestamp": "56:57",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3417s",
+      "transcript_segment_ids": [
+        "s0601"
+      ],
+      "frame_ids": [
+        "F0006"
+      ],
+      "sources": [
+        "gemini:static:gemini-3.8-flash"
+      ],
+      "status": "single-source",
+      "confidence": "medium",
+      "notes": "frame auto-attached by time, pixels not checked",
+      "injection_suspect": false,
+      "demonstrated": null
+    },
+    {
+      "id": "E0026",
+      "claim": "Decimal input breaks the int() version: the terminal shows second input 5.5 and 'ValueError: invalid literal for int()'. The first input (4.3, per speech) has scrolled out of view.",
+      "kind": "ui",
+      "t_start": 3417.0,
+      "t_end": 3417.0,
+      "timestamp": "56:57",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3417s",
+      "transcript_segment_ids": [
+        "s0600"
+      ],
+      "frame_ids": [
+        "F0006"
+      ],
+      "sources": [
+        "host-agent",
+        "host-vision",
+        "captions:manual"
+      ],
+      "status": "verified",
+      "confidence": "medium",
+      "notes": "host-agent note",
+      "injection_suspect": false,
+      "demonstrated": true
+    },
+    {
+      "id": "E0027",
+      "claim": "Convert both inputs into floats: `result = float(num1) + float(num2)` to support decimal numbers.",
+      "kind": "speech",
+      "t_start": 3423.84,
+      "t_end": 3423.84,
+      "timestamp": "57:03",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3423s",
+      "transcript_segment_ids": [
+        "s0602",
+        "s0603",
+        "s0604"
+      ],
+      "frame_ids": [],
+      "sources": [
+        "gemini:static:gemini-3.8-flash",
+        "captions:manual"
+      ],
+      "status": "corroborated",
+      "confidence": "high",
+      "notes": "matched transcript at 57:03 (model said 57:14)",
+      "injection_suspect": false,
+      "demonstrated": true
+    },
+    {
+      "id": "E0028",
+      "claim": "The float() function converts values to floating-point numbers, allowing decimal inputs as well as integers.",
+      "kind": "speech",
+      "t_start": 3429.84,
+      "t_end": 3429.84,
+      "timestamp": "57:09",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3429s",
+      "transcript_segment_ids": [
+        "s0603",
+        "s0604",
+        "s0605"
+      ],
+      "frame_ids": [],
+      "sources": [
+        "gemini:static:gemini-3.8-flash",
+        "captions:manual"
+      ],
+      "status": "corroborated",
+      "confidence": "high",
+      "notes": "",
+      "injection_suspect": false,
+      "demonstrated": null
+    },
+    {
+      "id": "E0029",
+      "claim": "Floating-Point Type Casting (float)",
+      "kind": "speech",
+      "t_start": 3429.84,
+      "t_end": 3429.84,
+      "timestamp": "57:09",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3429s",
+      "transcript_segment_ids": [
+        "s0603",
+        "s0604",
+        "s0605"
+      ],
+      "frame_ids": [],
+      "sources": [
+        "gemini:static:gemini-3.8-flash",
+        "captions:manual"
+      ],
+      "status": "corroborated",
+      "confidence": "high",
+      "notes": "",
+      "injection_suspect": false,
+      "demonstrated": true
+    },
+    {
+      "id": "E0030",
+      "claim": "float() converts a value to a decimal (floating-point) number.",
+      "kind": "speech",
+      "t_start": 3434.0,
+      "t_end": 3434.0,
+      "timestamp": "57:14",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3434s",
+      "transcript_segment_ids": [
+        "s0602",
+        "s0603",
+        "s0604"
+      ],
+      "frame_ids": [],
+      "sources": [
+        "host-agent",
+        "captions:manual"
+      ],
+      "status": "verified",
+      "confidence": "medium",
+      "notes": "host-agent note",
+      "injection_suspect": false,
+      "demonstrated": true
+    },
+    {
+      "id": "E0031",
+      "claim": "num1 = input(\"Enter a number: \")\nnum2 = input(\"Enter another number: \")\nresult = float(num1) + float(num2)\n\nprint(result)",
+      "kind": "code",
+      "t_start": 3445.0,
+      "t_end": 3445.0,
+      "timestamp": "57:25",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3445s",
+      "transcript_segment_ids": [
+        "s0606",
+        "s0605"
+      ],
+      "frame_ids": [
+        "F0007"
+      ],
+      "sources": [
+        "gemini:static:gemini-3.8-flash",
+        "host-agent",
+        "host-vision",
+        "captions:manual"
+      ],
+      "status": "verified",
+      "confidence": "low",
+      "notes": "code without a frame: not verified against pixels; frame auto-attached by time, pixels not checked; confirmed by host-agent note",
+      "injection_suspect": false,
+      "demonstrated": true
+    },
+    {
+      "id": "E0032",
+      "claim": "Terminal successfully calculating and outputting 9.5 when adding 4 and 5.5 using float().\nEnter a number: 4\nEnter another number: 5.5\n9.5",
+      "kind": "ui",
+      "t_start": 3455.0,
+      "t_end": 3455.0,
+      "timestamp": "57:35",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3455s",
+      "transcript_segment_ids": [
+        "s0607"
+      ],
+      "frame_ids": [
+        "F0008"
+      ],
+      "sources": [
+        "gemini:static:gemini-3.8-flash"
+      ],
+      "status": "single-source",
+      "confidence": "medium",
+      "notes": "frame auto-attached by time, pixels not checked",
+      "injection_suspect": false,
+      "demonstrated": null
+    },
+    {
+      "id": "E0033",
+      "claim": "Final run: inputs 4 and 5.5 print 9.5.",
+      "kind": "ui",
+      "t_start": 3458.0,
+      "t_end": 3458.0,
+      "timestamp": "57:38",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=3458s",
+      "transcript_segment_ids": [
+        "s0607"
+      ],
+      "frame_ids": [
+        "F0009"
+      ],
+      "sources": [
+        "host-agent",
+        "host-vision",
+        "captions:manual"
+      ],
+      "status": "verified",
+      "confidence": "medium",
+      "notes": "host-agent note",
+      "injection_suspect": false,
+      "demonstrated": true
+    }
+  ],
+  "frames": [
+    {
+      "id": "F0001",
+      "path": "screenshots/t3159840.jpg",
+      "abs_ts": 3159.84,
+      "selection_reason": "gemini-event",
+      "sha256": "5ad80db16234dcc9d2e801f8fa7ec43b66fb19e3f29b0b3f337f4a0371d99124",
+      "width": 1280,
+      "height": 720,
+      "pts": null,
+      "method": "section-download"
+    },
+    {
+      "id": "F0002",
+      "path": "screenshots/t3176200.jpg",
+      "abs_ts": 3176.2,
+      "selection_reason": "transcript-cue",
+      "sha256": "3b3580fb4ce0517b4f0ad39da1c8ceef839042afbfffd6673194729280b87f1d",
+      "width": 1280,
+      "height": 720,
+      "pts": null,
+      "method": "section-download"
+    },
+    {
+      "id": "F0003",
+      "path": "screenshots/t3254000.jpg",
+      "abs_ts": 3254.0,
+      "selection_reason": "gemini-event",
+      "sha256": "99fdddd87b29881caaaabb214d7ffa71d2eda050815b554b5314dd860b2111e0",
+      "width": 1280,
+      "height": 720,
+      "pts": null,
+      "method": "section-download"
+    },
+    {
+      "id": "F0004",
+      "path": "screenshots/t3280000.jpg",
+      "abs_ts": 3280.0,
+      "selection_reason": "gemini-event",
+      "sha256": "5bbf5936b33d4349e50778884c664e2feb615527a5b71a3c1bc67289c86eb742",
+      "width": 1280,
+      "height": 720,
+      "pts": null,
+      "method": "section-download"
+    },
+    {
+      "id": "F0005",
+      "path": "screenshots/t3375000.jpg",
+      "abs_ts": 3375.0,
+      "selection_reason": "gemini-event",
+      "sha256": "3c45019df8ccaee53ea5ea4b7f1870248a3fa32872c5be855ada10a57ac96c20",
+      "width": 1280,
+      "height": 720,
+      "pts": null,
+      "method": "section-download"
+    },
+    {
+      "id": "F0006",
+      "path": "screenshots/t3417000.jpg",
+      "abs_ts": 3417.0,
+      "selection_reason": "gemini-event",
+      "sha256": "eeaadb3b92d36cf6306b26f2857e6f7cd7ad274e397d7ff62322f36c2b1f1ec0",
+      "width": 1280,
+      "height": 720,
+      "pts": null,
+      "method": "section-download"
+    },
+    {
+      "id": "F0007",
+      "path": "screenshots/t3445000.jpg",
+      "abs_ts": 3445.0,
+      "selection_reason": "gemini-event",
+      "sha256": "4a0154dbc1ade426e2d83635950db2bba1eaf28d54dbdfe9cd7e7576e3f0f839",
+      "width": 1280,
+      "height": 720,
+      "pts": null,
+      "method": "section-download"
+    },
+    {
+      "id": "F0008",
+      "path": "screenshots/t3455000.jpg",
+      "abs_ts": 3455.0,
+      "selection_reason": "gemini-event",
+      "sha256": "26e095dddd7fb70f48bb0d208004ec518ac4253e97cb6110a7d9f7e10a19a39e",
+      "width": 1280,
+      "height": 720,
+      "pts": null,
+      "method": "section-download"
+    },
+    {
+      "id": "F0009",
+      "path": "screenshots/t3458000.jpg",
+      "abs_ts": 3458.0,
+      "selection_reason": "host-selected",
+      "sha256": "0fa57b0348a4d1b4e3c6ec94200d783a701f9c3021540004e123ed61b0245d5c",
+      "width": 1280,
+      "height": 720,
+      "pts": null,
+      "method": null
+    }
+  ],
+  "gaps": [],
+  "schema_version": "1"
+}

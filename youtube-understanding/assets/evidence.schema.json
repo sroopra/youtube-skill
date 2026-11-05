@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "youtube-understanding evidence.json",
+  "description": "Evidence ledger written by `yt.py package` (schema_version 1). Mirrors ytu.models.Evidence.",
+  "type": "object",
+  "required": ["schema_version", "video_id", "source_hash", "items", "frames", "gaps"],
+  "properties": {
+    "schema_version": {"const": "1"},
+    "video_id": {"type": "string", "pattern": "^[A-Za-z0-9_-]{11}$"},
+    "source_hash": {"type": "string"},
+    "items": {"type": "array", "items": {"$ref": "#/$defs/item"}},
+    "frames": {"type": "array", "items": {"$ref": "#/$defs/frame"}},
+    "gaps": {"type": "array", "items": {"$ref": "#/$defs/gap"}}
+  },
+  "$defs": {
+    "seconds": {"type": "number", "minimum": 0},
+    "item": {
+      "type": "object",
+      "required": ["id", "claim", "kind", "t_start", "t_end", "timestamp", "url", "transcript_segment_ids",
+                   "frame_ids", "sources", "status", "confidence", "notes", "injection_suspect", "demonstrated"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^E[0-9]{4,}$"},
+        "claim": {"type": "string"},
+        "kind": {"enum": ["speech", "code", "diagram", "slide", "ui", "inference"]},
+        "t_start": {"$ref": "#/$defs/seconds"},
+        "t_end": {"$ref": "#/$defs/seconds"},
+        "timestamp": {"type": "string", "pattern": "^([0-9]{2}:)?[0-9]{2}:[0-9]{2}$"},
+        "url": {"type": "string", "pattern": "^https://www\\.youtube\\.com/watch\\?v=[A-Za-z0-9_-]{11}&t=[0-9]+s$"},
+        "transcript_segment_ids": {"type": "array", "items": {"type": "string", "pattern": "^s[0-9]{4,}$"}},
+        "frame_ids": {"type": "array", "items": {"type": "string", "pattern": "^F[0-9]{4,}$"}},
+        "sources": {"type": "array", "items": {"type": "string"}},
+        "status": {"enum": ["verified", "corroborated", "single-source", "unverified", "contradicted"]},
+        "confidence": {"enum": ["high", "medium", "low"]},
+        "notes": {"type": "string"},
+        "injection_suspect": {"type": "boolean"},
+        "demonstrated": {"type": ["boolean", "null"]}
+      }
+    },
+    "frame": {
+      "type": "object",
+      "required": ["id", "path", "abs_ts", "selection_reason", "sha256", "width", "height"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^F[0-9]{4,}$"},
+        "path": {"type": "string"},
+        "abs_ts": {"$ref": "#/$defs/seconds"},
+        "selection_reason": {"enum": ["transcript-cue", "gemini-event", "interval", "scene", "keyframe", "user-question"]},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "width": {"type": "integer", "minimum": 1},
+        "height": {"type": "integer", "minimum": 1},
+        "pts": {"type": ["number", "null"]},
+        "method": {"type": ["string", "null"], "enum": ["remote-seek", "section-download", null]}
+      }
+    },
+    "gap": {
+      "type": "object",
+      "required": ["t_start", "t_end", "reason"],
+      "properties": {
+        "t_start": {"$ref": "#/$defs/seconds"},
+        "t_end": {"$ref": "#/$defs/seconds"},
+        "reason": {"type": "string"}
+      }
+    }
+  }
+}

@@ -1,0 +1,377 @@
+{
+  "schema_version": "1",
+  "video": {
+    "video_id": "rfscVS0vtbw",
+    "title": "Learn Python - Full Course for Beginners [Tutorial]",
+    "duration": 16012.0,
+    "channel": "freeCodeCamp.org",
+    "channel_id": "UC8butISFwT-Wl7EV0hUK0BQ",
+    "upload_date": "20180711",
+    "language": "en",
+    "availability": "public",
+    "live_status": "not_live",
+    "age_limit": 0,
+    "view_count": 49548852,
+    "webpage_url": "https://www.youtube.com/watch?v=rfscVS0vtbw",
+    "chapters": [
+      {
+        "start": 0.0,
+        "end": 105.0,
+        "title": "Introduction"
+      },
+      {
+        "start": 105.0,
+        "end": 400.0,
+        "title": "Installing Python & PyCharm"
+      },
+      {
+        "start": 400.0,
+        "end": 623.0,
+        "title": "Setup & Hello World"
+      },
+      {
+        "start": 623.0,
+        "end": 906.0,
+        "title": "Drawing a Shape"
+      },
+      {
+        "start": 906.0,
+        "end": 1623.0,
+        "title": "Variables & Data Types"
+      },
+      {
+        "start": 1623.0,
+        "end": 2298.0,
+        "title": "Working With Strings"
+      },
+      {
+        "start": 2298.0,
+        "end": 2906.0,
+        "title": "Working With Numbers"
+      },
+      {
+        "start": 2906.0,
+        "end": 3157.0,
+        "title": "Getting Input From Users"
+      },
+      {
+        "start": 3157.0,
+        "end": 3507.0,
+        "title": "Building a Basic Calculator"
+      },
+      {
+        "start": 3507.0,
+        "end": 3790.0,
+        "title": "Mad Libs Game"
+      },
+      {
+        "start": 3790.0,
+        "end": 4244.0,
+        "title": "Lists"
+      },
+      {
+        "start": 4244.0,
+        "end": 4737.0,
+        "title": "List Functions"
+      },
+      {
+        "start": 4737.0,
+        "end": 5055.0,
+        "title": "Tuples"
+      },
+      {
+        "start": 5055.0,
+        "end": 5651.0,
+        "title": "Functions"
+      },
+      {
+        "start": 5651.0,
+        "end": 6006.0,
+        "title": "Return Statement"
+      },
+      {
+        "start": 6006.0,
+        "end": 6847.0,
+        "title": "If Statements"
+      },
+      {
+        "start": 6847.0,
+        "end": 7237.0,
+        "title": "If Statements & Comparisons"
+      },
+      {
+        "start": 7237.0,
+        "end": 7637.0,
+        "title": "Building a better Calculator"
+      },
+      {
+        "start": 7637.0,
+        "end": 8053.0,
+        "title": "Dictionaries"
+      },
+      {
+        "start": 8053.0,
+        "end": 8421.0,
+        "title": "While Loop"
+      },
+      {
+        "start": 8421.0,
+        "end": 9164.0,
+        "title": "Building a Guessing Game"
+      },
+      {
+        "start": 9164.0,
+        "end": 9680.0,
+        "title": "For Loops"
+      },
+      {
+        "start": 9680.0,
+        "end": 10033.0,
+        "title": "Exponent Function"
+      },
+      {
+        "start": 10033.0,
+        "end": 10361.0,
+        "title": "2D Lists & Nested Loops"
+      },
+      {
+        "start": 10361.0,
+        "end": 10818.0,
+        "title": "Building a Translator"
+      },
+      {
+        "start": 10818.0,
+        "end": 11057.0,
+        "title": "Comments"
+      },
+      {
+        "start": 11057.0,
+        "end": 11561.0,
+        "title": "Try / Except"
+      },
+      {
+        "start": 11561.0,
+        "end": 12086.0,
+        "title": "Reading Files"
+      },
+      {
+        "start": 12086.0,
+        "end": 12493.0,
+        "title": "Writing to Files"
+      },
+      {
+        "start": 12493.0,
+        "end": 13436.0,
+        "title": "Modules & Pip"
+      },
+      {
+        "start": 13436.0,
+        "end": 14257.0,
+        "title": "Classes & Objects"
+      },
+      {
+        "start": 14257.0,
+        "end": 14908.0,
+        "title": "Building a Multiple Choice Quiz"
+      },
+      {
+        "start": 14908.0,
+        "end": 15157.0,
+        "title": "Object Functions"
+      },
+      {
+        "start": 15157.0,
+        "end": 15643.0,
+        "title": "Inheritance"
+      },
+      {
+        "start": 15643.0,
+        "end": 16012.0,
+        "title": "Python Interpreter"
+      }
+    ],
+    "yt_dlp_version": "2026.10.26",
+    "fetched_at": "2026-11-05T10:30:12+00:00",
+    "tracks": [
+      {
+        "code": "ar",
+        "kind": "manual",
+        "lang": "ar"
+      },
+      {
+        "code": "bg",
+        "kind": "manual",
+        "lang": "bg"
+      },
+      {
+        "code": "zh-CN",
+        "kind": "manual",
+        "lang": "zh"
+      },
+      {
+        "code": "en",
+        "kind": "manual",
+        "lang": "en"
+      },
+      {
+        "code": "iw",
+        "kind": "manual",
+        "lang": "iw"
+      },
+      {
+        "code": "hi",
+        "kind": "manual",
+        "lang": "hi"
+      },
+      {
+        "code": "id",
+        "kind": "manual",
+        "lang": "id"
+      },
+      {
+        "code": "ko",
+        "kind": "manual",
+        "lang": "ko"
+      },
+      {
+        "code": "pl",
+        "kind": "manual",
+        "lang": "pl"
+      },
+      {
+        "code": "pt",
+        "kind": "manual",
+        "lang": "pt"
+      },
+      {
+        "code": "ro",
+        "kind": "manual",
+        "lang": "ro"
+      },
+      {
+        "code": "ru",
+        "kind": "manual",
+        "lang": "ru"
+      },
+      {
+        "code": "es",
+        "kind": "manual",
+        "lang": "es"
+      },
+      {
+        "code": "tr",
+        "kind": "manual",
+        "lang": "tr"
+      },
+      {
+        "code": "ar",
+        "kind": "auto",
+        "lang": "ar"
+      },
+      {
+        "code": "bg",
+        "kind": "auto",
+        "lang": "bg"
+      },
+      {
+        "code": "zh-CN",
+        "kind": "auto",
+        "lang": "zh"
+      },
+      {
+        "code": "en",
+        "kind": "auto",
+        "lang": "en"
+      },
+      {
+        "code": "iw",
+        "kind": "auto",
+        "lang": "iw"
+      },
+      {
+        "code": "hi",
+        "kind": "auto",
+        "lang": "hi"
+      },
+      {
+        "code": "id",
+        "kind": "auto",
+        "lang": "id"
+      },
+      {
+        "code": "ko",
+        "kind": "auto",
+        "lang": "ko"
+      },
+      {
+        "code": "pl",
+        "kind": "auto",
+        "lang": "pl"
+      },
+      {
+        "code": "pt",
+        "kind": "auto",
+        "lang": "pt"
+      },
+      {
+        "code": "ro",
+        "kind": "auto",
+        "lang": "ro"
+      },
+      {
+        "code": "ru",
+        "kind": "auto",
+        "lang": "ru"
+      },
+      {
+        "code": "es",
+        "kind": "auto",
+        "lang": "es"
+      },
+      {
+        "code": "tr",
+        "kind": "auto",
+        "lang": "tr"
+      }
+    ]
+  },
+  "provenance": {
+    "transcript_source": "ytdlp",
+    "track": "en",
+    "is_generated": false,
+    "yt_dlp_version": "2026.10.26",
+    "providers_used": [
+      "ytdlp",
+      "gemini-interactions",
+      "ffmpeg-remote",
+      "host-agent"
+    ],
+    "models": [
+      "gemini-3.8-flash"
+    ],
+    "strategy": "gemini",
+    "multimodal": "gemini-static",
+    "mode": "tutorial",
+    "cost_estimate": {
+      "model": "gemini-3.8-flash",
+      "input_tokens": 110576,
+      "output_tokens": 8192,
+      "usd": 0.113652,
+      "basis": "348s x (280 tok/frame x 1 fps + 32 audio tok/s) + 2000 prompt tok; $0.75/$3.75 per 1M in/out; prices 2026-11-05"
+    },
+    "cost_actual": {
+      "initial_input_tokens": 109272,
+      "total_cached_tokens": 102087,
+      "total_input_tokens": 104081,
+      "total_output_tokens": 2199,
+      "total_thought_tokens": 0,
+      "total_tokens": 106280,
+      "total_tool_use_tokens": 0,
+      "input_tokens": 104081,
+      "output_tokens": 2199
+    },
+    "source_hash": "e32b9c2d9eaf4e4545a419fbdcb65b45ae9a695f9e4b2e7870023f923fe23119",
+    "tool": "youtube-understanding 0.1.0",
+    "created_at": "2026-11-05T10:42:26Z"
+  }
+}
