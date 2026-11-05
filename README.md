@@ -35,13 +35,11 @@ The agent replies (shortened from [`examples/rfscVS0vtbw/knowledge.md`](examples
 
 ## Install
 
-One command installs the skill for every agent:
-
 ```bash
-npx skills add sroopra/youtube-skill -g -a claude-code codex -y
+npx skills add sroopra/youtube-skill
 ```
 
-This works in Claude Code, Codex, Gemini CLI, GitHub Copilot (CLI and VS Code), pi, Cursor and OpenCode. It needs Node 22.20 or newer. Restart your agent afterwards.
+The installer asks which agents to install for and whether to install for this project or for your user. It works with Claude Code, Codex, Gemini CLI, GitHub Copilot, pi, Cursor, OpenCode and many more. It needs Node 22.20 or newer. Restart your agent afterwards.
 
 The skill also needs two programs that no installer adds for you:
 
@@ -52,15 +50,15 @@ The skill also needs two programs that no installer adds for you:
 
 macOS and Linux only. Windows is not tested.
 
-Check that everything works:
+Check that everything works. Ask your agent: "Run the youtube-understanding doctor check." Or run it yourself from the folder the skill was installed to:
 
 ```bash
-uv run ~/.agents/skills/youtube-understanding/scripts/yt.py doctor --network
+uv run <skill-folder>/scripts/yt.py doctor --network
 ```
 
 The first run downloads the libraries. It takes about 30 seconds.
 
-Update: `npx skills update youtube-understanding -g -y`. Remove: `npx skills remove youtube-understanding -g -y`.
+Update: `npx skills update`. Remove: `npx skills remove`.
 
 ### Other ways to install
 
@@ -71,7 +69,7 @@ Use one of these instead of `npx`, not as well. Two installs make the agent load
 | Claude Code (plugin) | `claude plugin marketplace add sroopra/youtube-skill`, then `claude plugin install youtube-understanding@youtube-skill` |
 | pi (package) | `pi install git:github.com/sroopra/youtube-skill` |
 | Gemini CLI | `gemini skills install https://github.com/sroopra/youtube-skill --path youtube-understanding --consent` |
-| Any agent, without Node | `gh skill install sroopra/youtube-skill youtube-understanding --agent claude-code --scope user` (gh 2.90 or newer) |
+| Any agent, without Node | `gh skill install sroopra/youtube-skill` (gh 2.90 or newer) |
 
 Update the Claude Code plugin with `claude plugin marketplace update youtube-skill`, then `claude plugin update youtube-understanding@youtube-skill`. Update the pi package with `pi update`.
 
@@ -140,7 +138,7 @@ The agent calls `scripts/yt.py`. You can call it yourself too:
 | `yt.py frames URL --at 12:34` | A screenshot as a JPEG file | 5 to 20 s |
 | `yt.py package URL --with-frames --out ./notes` | Full notes folder | 1 to 3 min |
 
-Write each command as `uv run ~/.agents/skills/youtube-understanding/scripts/yt.py ...` (or `youtube-understanding/scripts/yt.py` in a clone). Output is JSON.
+Write each command as `uv run <skill-folder>/scripts/yt.py ...`. Output is JSON.
 
 Add `--window 10:00-25:00` to work on one part of a long video. It is faster and cheaper.
 
