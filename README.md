@@ -2,6 +2,7 @@
 
 [![CI](https://github.com/sroopra/youtube-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/sroopra/youtube-skill/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![skills.sh](https://skills.sh/b/sroopra/youtube-skill)](https://skills.sh/sroopra/youtube-skill)
 
 Give your coding agent a YouTube link. It reads the video and answers with timestamps.
 
@@ -57,6 +58,14 @@ npx skills add sroopra/youtube-skill
 ```
 
 The installer asks which agents to install for and whether to install for this project or for your user. It works with Claude Code, Codex, Gemini CLI, GitHub Copilot, pi, Cursor, OpenCode and many more. It needs Node 22.20 or newer. Restart your agent afterwards.
+
+To skip the questions and install for Claude Code in this project:
+
+```bash
+npx skills add sroopra/youtube-skill -a claude-code -y
+```
+
+Add `-g` to install for your user, so every project gets the skill.
 
 The skill also needs two programs that no installer adds for you:
 
