@@ -1,0 +1,42 @@
+name: Dependabot sync
+
+# Dependabot bumps pyproject.toml and uv.lock but not the PEP 723 block in scripts/yt.py
+# (dependabot/dependabot-core#11946). This copies the new pins into yt.py and pushes the change
+# to the Dependabot branch, so tests/test_manifests.py passes and users get the new versions.
+# The commit message carries [dependabot skip] so Dependabot keeps rebasing the PR; after a
+# rebase this job runs again. Pushes made with GITHUB_TOKEN start CI only after a maintainer
+# approves the run on the PR.
+
+on:
+  pull_request:
+    paths:
+      - youtube-understanding/pyproject.toml
+
+permissions:
+  contents: read
+
+jobs:
+  sync-pep723:
+    if: github.event.pull_request.user.login == 'dependabot[bot]' && github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+      # Standard library only: no dependency from the PR is installed or run while the token can write.
+      - run: python3 .github/scripts/sync_pep723.py
+      - name: Push yt.py if it changed
+        env:
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          if git diff --quiet -- youtube-understanding/scripts/yt.py; then
+            echo "yt.py already in sync"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "[dependabot skip] Sync yt.py inline dependencies with pyproject.toml" -- youtube-understanding/scripts/yt.py
+          git push origin "HEAD:refs/heads/$HEAD_REF"

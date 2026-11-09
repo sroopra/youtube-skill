@@ -1,0 +1,6 @@
+# Local ASR engine for Linux and Intel macOS (see providers/asr.py).
+# Installed on demand into an isolated `uv run --no-project` env. Dependabot keeps these pins current.
+faster-whisper==1.2.1
+# faster-whisper 1.2.1 breaks on av 19 (TypeError: open() got an unexpected keyword argument
+# 'metadata_errors'); fixed upstream in SYSTRAN/faster-whisper#1495, not yet released.
+av<19

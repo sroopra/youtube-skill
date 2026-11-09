@@ -85,7 +85,8 @@ def test_fetch_windowed_asr(fake_run, linux, cfg, cache):
     dl, run = fake_run.calls[0][0], fake_run.calls[1][0]
     assert "*60.000-90.000" in dl and "ffmpeg:-ac 1 -ar 16000" in dl
     assert run[:3] == ["uv", "run", "--no-project"]
-    assert "faster-whisper==1.2.1" in run and "av<19" in run
+    for spec in asr_mod.BACKENDS["faster-whisper"][1]:
+        assert run[run.index(spec) - 1] == "--with"
     i = run.index("python")
     assert run[i + 1] == "-I" and run[i + 2].endswith("asr_worker.py")
     assert run[run.index("--lang") + 1] == "en" and run[run.index("--model") + 1] == "small"
@@ -105,7 +106,7 @@ def test_fetch_env_overrides(fake_run, linux, cfg, cache, monkeypatch):
     rules(fake_run)
     t = AsrProvider(cfg, cache).fetch(VID, None)
     run = fake_run.calls[1][0]
-    assert "mlx-whisper==0.4.3" in run and "--download-sections" not in fake_run.calls[0][0]
+    assert asr_mod.BACKENDS["mlx-whisper"][1][0] in run and "--download-sections" not in fake_run.calls[0][0]
     assert t.track.code == "asr:mlx-whisper:mlx-community/whisper-large-v3-turbo"
     assert t.language == "en"   # detected by engine when not given
 
@@ -136,3 +137,15 @@ def test_inventory(linux, cfg, cache):
     meta = VideoMeta(video_id=VID, title="t", duration=19.0, language="en-US")
     [tr] = AsrProvider(cfg, cache).inventory(meta)
     assert tr.kind == "asr" and tr.lang == "en" and tr.code == "asr:faster-whisper:small" and tr.is_generated
+
+
+@pytest.mark.parametrize("backend, engine", [
+    ("parakeet", "parakeet-mlx"), ("mlx-whisper", "mlx-whisper"), ("faster-whisper", "faster-whisper")])
+def test_engine_pins_come_from_requirements_files(backend, engine):
+    # Pins live in requirements files so Dependabot can bump them; the engine is pinned exactly and first.
+    pkgs = asr_mod.BACKENDS[backend][1]
+    assert pkgs[0].startswith(f"{engine}==") and all(p and not p.startswith("#") for p in pkgs)
+
+
+def test_faster_whisper_keeps_av_cap():
+    assert "av<19" in asr_mod.BACKENDS["faster-whisper"][1]
