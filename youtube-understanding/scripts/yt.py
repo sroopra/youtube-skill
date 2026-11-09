@@ -3,7 +3,7 @@
 # requires-python = ">=3.11"
 # dependencies = [
 #     "yt-dlp[default,deno,curl-cffi]==2026.10.26",
-#     "youtube-transcript-api==1.2.4",
+#     "youtube-transcript-api==1.2.5",
 #     "google-genai==2.34.0",
 # ]
 # ///
