@@ -4,7 +4,7 @@ description: "Understand YouTube videos from a URL or video ID. Fetches metadata
 license: MIT
 compatibility: "Requires uv (manages Python >=3.11 and pinned deps) and network access to youtube.com; ffmpeg for frames and local ASR; optional GEMINI_API_KEY or GOOGLE_API_KEY (generativelanguage.googleapis.com) for multimodal analysis. macOS and Linux."
 metadata:
-  version: "0.1.1"
+  version: "0.1.2"
 ---
 
 # YouTube understanding
