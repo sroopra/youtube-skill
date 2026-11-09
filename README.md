@@ -9,7 +9,7 @@ Works in every agent that reads the [Agent Skills standard](https://agentskills.
 
 ![Install with npx skills, ask Claude Code about a Python tutorial, get the code with timestamps, click a timestamp to open the video at that second.](docs/demo.gif)
 
-*A real Claude Code session. The skill run took about 30 seconds and plays 10 times faster here. The YouTube ads are cut out.*
+*A real Claude Code session, edited: the install and the start of Claude Code play 1.5 times faster, the skill run (about 30 seconds) plays 10 times faster, and the YouTube ads are cut out.*
 
 ## Why not just paste the transcript?
 
