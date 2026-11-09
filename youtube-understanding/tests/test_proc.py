@@ -168,3 +168,22 @@ def test_redact_googlevideo_and_params():
     assert "203.0.113.9" not in out and "lsig=Y" not in out and "<googlevideo-url>" in out
     assert proc.redact("x?ip=203.0.113.9&lsig=Y&zip=1") == "x?ip=***&lsig=***&zip=1"
     assert proc.redact("text with secretvalue99", secrets=["secretvalue99"]) == "text with ***"
+
+
+def test_log_handler_redacts_messages_and_tracebacks(monkeypatch):
+    # -vv logs unhandled exceptions with exc_info; the traceback must not carry the key.
+    import logging
+    import sys
+
+    from ytu.util.log import setup_logging
+
+    key = "AIzaFAKE0000000000000000000000000000000"
+    monkeypatch.setenv("GEMINI_API_KEY", key)
+    handler = next(h for h in setup_logging().handlers if getattr(h, "_ytu", False))
+    try:
+        raise RuntimeError(f"request failed for key {key}")
+    except RuntimeError:
+        record = logging.LogRecord("ytu.test", logging.DEBUG, __file__, 1, "unhandled %s", (key,),
+                                   sys.exc_info())
+    out = handler.format(record)
+    assert "RuntimeError" in out and key not in out

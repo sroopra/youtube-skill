@@ -57,6 +57,8 @@ from ..util.sanitize import detect_injection
 log = logging.getLogger("ytu.gemini")
 
 SDK_VERSION = "2.34.0"
+# The only host that ever receives the key (see _get_client).
+GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/"
 PRICE_TABLE_DATE = "2026-11-05"
 # USD per 1M tokens (paid tier, research 2.A pricing row). Update with date.
 # 3.8/3.6 Flash double on 2027-01-01; 4 Argon doubles on 2026-12-01.
@@ -505,7 +507,11 @@ class GeminiProvider:
                                         f"Run via `uv run scripts/yt.py` (google-genai=={SDK_VERSION}).") from e
             self._key_scrub = key
             # Our own retry loop owns backoff; keep SDK retries minimal (attempts=1).
-            self._client = genai.Client(api_key=key, http_options=types.HttpOptions(
+            # Pin the endpoint: without base_url and vertexai=False, the SDK reads
+            # GOOGLE_GEMINI_BASE_URL / GOOGLE_GENAI_USE_VERTEXAI from the environment, so one
+            # env var could send the key to another host.
+            self._client = genai.Client(api_key=key, vertexai=False, http_options=types.HttpOptions(
+                base_url=GEMINI_BASE_URL,
                 timeout=int(self.cfg.timeout("gemini") * 1000),
                 retry_options=types.HttpRetryOptions(attempts=1)))
         return self._client

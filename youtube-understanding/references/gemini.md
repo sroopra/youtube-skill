@@ -7,18 +7,27 @@ token counts and agentic behaviour as estimates until `usage` confirms them.
 
 ## Key setup
 
-Lookup order (first hit wins; the key is never printed, logged, cached or passed to child processes):
+Lookup order (first hit wins; the key is never printed, logged, cached or passed to child processes,
+and is only sent to `https://generativelanguage.googleapis.com/`, pinned in `providers/gemini.py`):
 
 1. env `GEMINI_API_KEY`, then `GOOGLE_API_KEY`
 2. file `~/.config/youtube-understanding/.env` (override path: `YTU_ENV_FILE`), lines `GEMINI_API_KEY=...`.
    With `XDG_CONFIG_HOME` set it is `$XDG_CONFIG_HOME/youtube-understanding/.env` (and `config.toml` there too).
 
+The user sets the key, not the agent. Type it in an editor, never in a shell command (it would
+stay in shell history and in the agent's log):
+
 ```bash
 mkdir -p ~/.config/youtube-understanding
-printf 'GEMINI_API_KEY=%s\n' 'paste-key-here' > ~/.config/youtube-understanding/.env
+touch ~/.config/youtube-understanding/.env
 chmod 600 ~/.config/youtube-understanding/.env   # a warning is printed if group/other can read it
+# open the file in an editor and add one line: GEMINI_API_KEY=your-key
 uv run <skill_dir>/scripts/yt.py doctor           # gemini_key.present / source, never the value
 ```
+
+The skill can't hide the key from an agent that runs as the same user: that agent can read the
+file or the environment itself. The rules in SKILL.md's Security section tell agents not to.
+The real limit is the key: restrict it and cap it (see the README's "Keep your key safe").
 
 Missing key → exit 5, message names the places looked. Get a key at https://aistudio.google.com/apikey.
 
