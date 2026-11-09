@@ -6,7 +6,7 @@ requires-python = ">=3.11"
 # Keep in sync with the PEP 723 block in scripts/yt.py.
 dependencies = [
     "yt-dlp[default,deno,curl-cffi]==2026.10.26",
-    "youtube-transcript-api==1.2.4",
+    "youtube-transcript-api==1.2.5",
     "google-genai==2.34.0",
 ]
 
@@ -14,7 +14,7 @@ dependencies = [
 dev = ["pytest>=8"]
 # CI tooling, pinned here so Dependabot updates it. Not a default group: `uv run` never installs it.
 # setup-uv reads the uv version from uv.lock (version-file in .github/workflows/ci.yml).
-ci = ["uv==0.9.17", "skills-ref==0.1.1"]
+ci = ["uv==0.13.7", "skills-ref==0.1.1"]
 
 [tool.uv]
 package = false
