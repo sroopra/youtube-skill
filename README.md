@@ -7,6 +7,20 @@ Give your coding agent a YouTube link. It reads the video and answers with times
 
 Works in every agent that reads the [Agent Skills standard](https://agentskills.io): Claude Code, Codex, Gemini CLI, GitHub Copilot, pi, Cursor, OpenCode. MIT.
 
+![Install with npx skills, ask Claude Code about a Python tutorial, get the code with timestamps, click a timestamp to open the video at that second.](docs/demo.gif)
+
+*A real Claude Code session, edited: the install and the start of Claude Code play 1.5 times faster, the skill run (about 30 seconds) plays 10 times faster, and the YouTube ads are cut out.*
+
+## Why not just paste the transcript?
+
+| | Transcript pasted into chat | youtube-understanding |
+|---|---|---|
+| What the agent sees | Spoken words only | Spoken words, screenshots, and Gemini if you have a key |
+| Code shown on screen | Lost if nobody reads it out loud | Read from screenshots |
+| Each claim | No link to the video | Links to the second it happens, for example [54:40](https://www.youtube.com/watch?v=rfscVS0vtbw&t=3280s) |
+| Guesses | Look the same as facts | Marked, for example "Python 3.6" is marked inferred and single-source |
+| Checking an answer | Watch the video again | Click the timestamp, or read `evidence.json` |
+
 ## What it does
 
 - Summarizes a video. Every point links to the second in the video where it is said.
