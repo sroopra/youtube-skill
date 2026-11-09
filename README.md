@@ -141,7 +141,28 @@ Type the key in an editor. If you paste it into a shell command, it stays in you
 
 The skill also reads `GEMINI_API_KEY` or `GOOGLE_API_KEY` from the environment. The environment wins over the file.
 
-The skill never prints the key, writes it to the cache, or puts it in the notes. `doctor` only shows whether it found a key.
+### Keep your key safe
+
+The skill only sends your key to Google. It never prints the key, writes it to the cache, or puts it in the notes. `doctor` only shows whether it found a key.
+
+The skill can't hide the key from your agent. Your agent runs as you, so it can open the same file. The skill tells agents not to. A video could still try to trick one.
+
+So limit what a stolen key can do:
+
+1. Make a new key just for this skill. Don't reuse a key from another project.
+2. In Google Cloud, restrict the key to the Generative Language API.
+3. Stay on the free tier, or set a low quota. A budget alert only sends an email. It doesn't stop the spending.
+4. If you think the key leaked, delete it in AI Studio and make a new one.
+
+Keep the key in the file. Don't `export` it in `~/.zshrc`. If you do, every program you start can see it.
+
+In Claude Code you can block the file too. Add this to `~/.claude/settings.json`:
+
+```json
+{ "permissions": { "deny": ["Read(~/.config/youtube-understanding/**)"] } }
+```
+
+This stops your agent from opening the file by mistake. It doesn't block every way to read it.
 
 ## Use it
 

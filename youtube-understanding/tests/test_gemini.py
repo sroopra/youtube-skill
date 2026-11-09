@@ -221,6 +221,9 @@ def test_client_factory_lazy_and_key_passed(cfg, cache, key, monkeypatch):
     p = g.GeminiProvider(cfg, cache)
     assert p.analyze(req()).data == ASK_OK
     assert seen["api_key"] == key and seen["http_options"].retry_options.attempts == 1
+    # Endpoint is pinned, so GOOGLE_GEMINI_BASE_URL / GOOGLE_GENAI_USE_VERTEXAI cannot redirect the key.
+    assert seen["vertexai"] is False
+    assert seen["http_options"].base_url == "https://generativelanguage.googleapis.com/"
 
 
 def test_missing_key(cfg, cache):

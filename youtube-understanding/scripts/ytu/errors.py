@@ -88,8 +88,9 @@ class AuthError(YTUError):
 
 class MissingKey(AuthError):
     default_remediation = (
-        "Set GEMINI_API_KEY (or GOOGLE_API_KEY) in the environment, or put "
-        "GEMINI_API_KEY=... in ~/.config/youtube-understanding/.env (chmod 600). "
+        "Ask the user to add their key: one line GEMINI_API_KEY=... in "
+        "~/.config/youtube-understanding/.env (typed in an editor, then chmod 600). "
+        "Do not read, print or ask for the key yourself. "
         "Transcript-only commands work without a key (--strategy transcript)."
     )
 
