@@ -1,6 +1,6 @@
 [project]
 name = "youtube-understanding"
-version = "0.1.0"
+version = "0.1.1"
 description = "Agent Skill: transcript-first YouTube video understanding (dev/test project; runtime uses scripts/yt.py PEP 723 metadata)."
 requires-python = ">=3.11"
 # Keep in sync with the PEP 723 block in scripts/yt.py.
