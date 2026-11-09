@@ -1,0 +1,55 @@
+# Dependabot version updates. Every pinned version in this repo is covered by one entry below:
+#   uv              youtube-understanding/pyproject.toml + uv.lock: runtime deps, pytest (dev),
+#                   uv and skills-ref (ci group; setup-uv reads the uv version from uv.lock)
+#   pip             youtube-understanding/scripts/ytu/asr_requirements/*.txt: on-demand local ASR engines
+#   github-actions  .github/workflows/*.yml (SHA pins with "# vX" comments)
+# Dependabot does not edit the PEP 723 block in scripts/yt.py (dependabot/dependabot-core#11946);
+# .github/workflows/dependabot-sync.yml copies pyproject.toml's dependencies into it on Dependabot PRs.
+version: 2
+updates:
+  - package-ecosystem: "uv"
+    directory: "/youtube-understanding"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    # Let fresh releases settle before proposing them (version updates only; security updates skip this).
+    cooldown:
+      default-days: 3
+      semver-major-days: 7
+    groups:
+      python-minor-patch:
+        applies-to: version-updates
+        update-types: ["minor", "patch"]
+      python-security:
+        applies-to: security-updates
+        patterns: ["*"]
+
+  - package-ecosystem: "pip"
+    directory: "/youtube-understanding/scripts/ytu/asr_requirements"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    cooldown:
+      default-days: 3
+      semver-major-days: 7
+    ignore:
+      # av<19 is a deliberate cap: faster-whisper 1.2.1 fails on av 19. Drop this once a
+      # faster-whisper release includes SYSTRAN/faster-whisper#1495, and remove the cap too.
+      - dependency-name: "av"
+        versions: [">=19"]
+    groups:
+      asr-engines:
+        applies-to: version-updates
+        patterns: ["*"]
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    cooldown:
+      default-days: 3
+    groups:
+      github-actions:
+        applies-to: version-updates
+        patterns: ["*"]

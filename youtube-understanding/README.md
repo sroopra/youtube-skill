@@ -16,5 +16,5 @@ Run the tests:
 
 ```bash
 uv run pytest -q
-uvx --from skills-ref==0.1.1 agentskills validate "$PWD"
+uv run --locked --only-group ci agentskills validate "$PWD"
 ```

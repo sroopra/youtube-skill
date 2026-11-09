@@ -1,0 +1,3 @@
+# Local ASR engine for darwin-arm64, 25 European languages (see providers/asr.py).
+# Installed on demand into an isolated `uv run --no-project` env. Dependabot keeps this pin current.
+parakeet-mlx==0.7.0

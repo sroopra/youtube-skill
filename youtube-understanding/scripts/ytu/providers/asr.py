@@ -1,9 +1,10 @@
 """On-demand local ASR fallback (research 2.C, 4.13). NEVER a default dependency.
 
 Backend selection (select_backend):
-    darwin + arm64 and lang in PARAKEET_LANGS (or lang None) -> "parakeet"      (parakeet-mlx==0.7.0)
-    darwin + arm64 otherwise                                   -> "mlx-whisper"  (mlx-whisper==0.4.3)
-    else                                                       -> "faster-whisper" (faster-whisper==1.2.1, "av<19")
+    darwin + arm64 and lang in PARAKEET_LANGS (or lang None) -> "parakeet"      (parakeet-mlx)
+    darwin + arm64 otherwise                                   -> "mlx-whisper"  (mlx-whisper)
+    else                                                       -> "faster-whisper" (faster-whisper, "av<19")
+Engine pins live in scripts/ytu/asr_requirements/requirements-<backend>.txt so Dependabot can update them.
 Overrides: env YTU_ASR_BACKEND (one of the three) and YTU_ASR_MODEL.
 
 Every engine runs in an isolated, uv-cached throw-away env, never in the skill's env:
@@ -43,11 +44,20 @@ log = logging.getLogger("ytu.asr")
 PARAKEET_LANGS = frozenset(
     "bg hr cs da nl en et fi fr de el hu it lv lt mt pl pt ro sk sl es sv ru uk".split())
 
-# backend -> (short source name, pip specs, default model)
+REQUIREMENTS_DIR = Path(__file__).resolve().parent.parent / "asr_requirements"
+
+
+def _pins(backend: str) -> list[str]:
+    """Pip specs from requirements-<backend>.txt (one per line; blank lines and # comments skipped)."""
+    lines = (REQUIREMENTS_DIR / f"requirements-{backend}.txt").read_text(encoding="utf-8").splitlines()
+    return [ln.split("#", 1)[0].strip() for ln in lines if ln.split("#", 1)[0].strip()]
+
+
+# backend -> (short source name, pip specs, default model); pkgs[0] is the engine itself
 BACKENDS: dict[str, tuple[str, list[str], str]] = {
-    "parakeet": ("asr-parakeet", ["parakeet-mlx==0.7.0"], "mlx-community/parakeet-tdt-0.6b-v3"),
-    "mlx-whisper": ("asr-mlx", ["mlx-whisper==0.4.3"], "mlx-community/whisper-small-mlx"),
-    "faster-whisper": ("asr-fw", ["faster-whisper==1.2.1", "av<19"], "small"),
+    "parakeet": ("asr-parakeet", _pins("parakeet"), "mlx-community/parakeet-tdt-0.6b-v3"),
+    "mlx-whisper": ("asr-mlx", _pins("mlx-whisper"), "mlx-community/whisper-small-mlx"),
+    "faster-whisper": ("asr-fw", _pins("faster-whisper"), "small"),
 }
 WORKER = Path(__file__).resolve().parent.parent / "asr_worker.py"
 UV_REMEDIATION = "Install uv (https://docs.astral.sh/uv/) — ASR engines are fetched on demand into an isolated env."
