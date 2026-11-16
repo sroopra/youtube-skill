@@ -4,7 +4,7 @@
 # dependencies = [
 #     "yt-dlp[default,deno,curl-cffi]==2026.10.26",
 #     "youtube-transcript-api==1.2.5",
-#     "google-genai==2.34.0",
+#     "google-genai==3.0.0",
 # ]
 # ///
 """youtube-understanding entrypoint.
