@@ -1,4 +1,4 @@
-"""Gemini multimodal provider via the Interactions API (google-genai 2.34.0; research 2.A, 4.4-4.6).
+"""Gemini multimodal provider via the Interactions API (google-genai 3.0.0; research 2.A, 4.4-4.6).
 
 ``google.genai`` is imported lazily inside methods (transcript-only runs never import it).
 Key: ``config.require_gemini_key()`` -> ``genai.Client(api_key=...)``; never logged, cached,
@@ -56,9 +56,10 @@ from ..util.sanitize import detect_injection
 
 log = logging.getLogger("ytu.gemini")
 
-SDK_VERSION = "2.34.0"
+SDK_VERSION = "3.0.0"
 # The only host that ever receives the key (see _get_client).
 GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/"
+GEMINI_API_VERSION = "v1beta"
 PRICE_TABLE_DATE = "2026-11-05"
 # USD per 1M tokens (paid tier, research 2.A pricing row). Update with date.
 # 3.8/3.6 Flash double on 2027-01-01; 4 Argon doubles on 2026-12-01.
@@ -510,8 +511,10 @@ class GeminiProvider:
             # Pin the endpoint: without base_url and vertexai=False, the SDK reads
             # GOOGLE_GEMINI_BASE_URL / GOOGLE_GENAI_USE_VERTEXAI from the environment, so one
             # env var could send the key to another host.
+            # Pin the API version too: SDK 3.x defaults to v1 (and reads GOOGLE_GENAI_API_VERSION),
+            # but the Interactions API and preview models are served only on v1beta.
             self._client = genai.Client(api_key=key, vertexai=False, http_options=types.HttpOptions(
-                base_url=GEMINI_BASE_URL,
+                base_url=GEMINI_BASE_URL, api_version=GEMINI_API_VERSION,
                 timeout=int(self.cfg.timeout("gemini") * 1000),
                 retry_options=types.HttpRetryOptions(attempts=1)))
         return self._client
