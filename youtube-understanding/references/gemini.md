@@ -31,7 +31,7 @@ The real limit is the key: restrict it and cap it (see the README's "Keep your k
 
 Missing key → exit 5, message names the places looked. Get a key at https://aistudio.google.com/apikey.
 
-## API shape (Interactions API, google-genai 2.34.0)
+## API shape (Interactions API, google-genai 3.0.0)
 
 ```python
 client.interactions.create(
